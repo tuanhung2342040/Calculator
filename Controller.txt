@@ -1,0 +1,174 @@
+package sample;
+
+
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+
+public class Controller {
+    public Button btnZero;
+    public Button btnOne;
+    public Button btnTwo;
+    public Button btnThree;
+    public Button btnFour;
+    public Button btnFive;
+    public Button btnSix;
+    public Button btnSeven;
+    public Button btnEight;
+    public Button btnNine;
+    public Button btnDot;
+    public Button btnAdd;
+    public Button btnSubtract;
+    public Button btnMultiply;
+    public Button btnDivide;
+    public Button btnClear;
+    public TextField txtInput;
+    public Button btnEqual;
+
+
+
+     double fNumber;
+     double sNumber;
+     double result;
+     String operations;
+     String answer;
+
+
+
+    public void zero(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnZero.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void one(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnOne.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void two(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnTwo.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void three(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnThree.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void four(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnFour.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void five(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnFive.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void six(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnSix.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void seven(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnSeven.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void eight(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() + btnEight.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void nine(ActionEvent actionEvent) {
+        String oldValue = txtInput.getText() +btnNine.getText();
+        txtInput.setText(oldValue);
+
+    }
+
+    public void dot(ActionEvent actionEvent) {
+        if (!txtInput.getText().contains(".")) {
+            txtInput.setText(txtInput.getText() + btnDot.getText());
+        }
+
+    }
+
+    public void clear(ActionEvent actionEvent) {
+        txtInput.setText("");
+        this.fNumber=0;
+        this.sNumber=0;
+
+    }
+
+    public void add(ActionEvent actionEvent) {
+        fNumber = Double.parseDouble(txtInput.getText());
+        txtInput.setText("");
+        operations = "+";
+
+
+    }
+
+    public void subtract(ActionEvent actionEvent) {
+        fNumber = Double.parseDouble(txtInput.getText());
+        txtInput.setText("");
+        operations = "-";
+
+
+
+    }
+
+    public void divide(ActionEvent actionEvent) {
+        fNumber = Double.parseDouble(txtInput.getText());
+        txtInput.setText("");
+        operations = "/";
+
+    }
+
+    public void Multiply(ActionEvent actionEvent) {
+        fNumber = Double.parseDouble(txtInput.getText());
+        txtInput.setText("");
+        operations = "X";
+
+    }
+
+    public void equal(ActionEvent actionEvent) {
+        String answer;
+        sNumber = Double.parseDouble(txtInput.getText());
+        if (operations == "+") {
+            result = fNumber + sNumber;
+            answer = String.format("%.2f",result);
+            txtInput.setText(answer);
+        } else if (operations == "-") {
+            result = fNumber - sNumber;
+            answer = String.format("%.2f",result);
+            txtInput.setText(answer);
+        } else if (operations == "X") {
+            result = fNumber * sNumber;
+            answer = String.format("%.2f",result);
+            txtInput.setText(answer);
+        } else if (operations == "/") {
+            result = fNumber / sNumber;
+            answer = String.format("%.2f",result);
+            txtInput.setText(answer);
+        }
+
+
+    }
+}
+
+
+
+
+
+
